@@ -4,6 +4,11 @@ import java.util.Collections;
 import java.util.List;
 
 public class medianOfTwoSortedArrays {
+    /*
+    Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+    The overall run time complexity should be O(log (m+n)).
+    to see question => https://leetcode.com/problems/median-of-two-sorted-arrays/
+     */
     public static void main(String[] args) {
         int[] arr1 = {1,3};
         int[] arr2 = {2};
@@ -12,9 +17,7 @@ public class medianOfTwoSortedArrays {
         //int[] arr2 = {3,4};
 
         List<Integer> array = new ArrayList<>();
-
         int loop = arr1.length + arr2.length;
-
         for (int i = 0; i < loop; i++) {
             if (i<arr1.length){
                 array.add(arr1[i]);
@@ -22,7 +25,6 @@ public class medianOfTwoSortedArrays {
             else
                 array.add(arr2[arr1.length-i]);
         }
-
         Collections.sort(array);
         System.out.println(array);
         if (array.size()%2!=0){
@@ -31,6 +33,5 @@ public class medianOfTwoSortedArrays {
         else{
             System.out.println((Double.valueOf(array.get((array.size() - 1) / 2)) + Double.valueOf(array.get(((array.size() - 1) / 2) + 1))) /2);
         }
-
     }
 }
